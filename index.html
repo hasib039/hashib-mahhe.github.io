@@ -461,25 +461,7 @@
     .svc .svc-footer { margin-top: 22px; display: flex; justify-content: space-between; align-items: center; }
     @media(max-width:860px) { .svc { grid-column: 1/-1; } }
 
-    /* ── Courses ───────────────────────────────────────────────────────────── */
-    .courses { display: grid; grid-template-columns: repeat(12,1fr); gap: 24px; }
-    .course-card {
-      grid-column: span 4; border: 1px solid var(--border); border-radius: 12px; padding: 22px;
-      background: var(--surface); display: flex; flex-direction: column;
-      min-height: 280px; transition: all .25s ease; position: relative; overflow: hidden;
-    }
-    .course-card:hover { border-color: var(--border-2); transform: translateY(-2px); }
-    .course-card .c-top { display: flex; justify-content: space-between; align-items: flex-start; }
-    .course-card .badge { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; padding: 4px 8px; border-radius: 4px; background: var(--hair); color: var(--text-2); text-transform: uppercase; }
-    .course-card .badge.soon { color: var(--text-3); }
-    .course-card .lessons { font-family: var(--mono); font-size: 11px; color: var(--text-3); letter-spacing: 0.1em; }
-    .course-card h4 { font-size: 19px; font-weight: 500; letter-spacing: -0.02em; margin: auto 0 6px; line-height: 1.25; }
-    .course-card .sub { font-size: 13.5px; color: var(--text-2); line-height: 1.55; margin: 0 0 16px; }
-    .progress { height: 3px; background: var(--border); border-radius: 999px; overflow: hidden; margin-top: auto; }
-    .progress > span { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
-    .course-card .meta-row { display: flex; justify-content: space-between; margin-top: 10px; font-family: var(--mono); font-size: 10.5px; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; }
-    @media(max-width:1000px) { .course-card { grid-column: span 6; } }
-    @media(max-width:640px) { .course-card { grid-column: 1/-1; } }
+
 
     /* ── Free Tools (Cost Estimator) ───────────────────────────────────────── */
     .tools-wrap {
@@ -537,43 +519,7 @@
       .tool-right { padding: 32px 24px; }
     }
 
-    /* ── Lab / GitHub ──────────────────────────────────────────────────────── */
-    .lab { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--surface); }
-    .lab-head {
-      display: grid; grid-template-columns: 80px 1fr 160px 160px 120px;
-      padding: 14px 22px; border-bottom: 1px solid var(--border);
-      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--text-3); text-transform: uppercase;
-    }
-    .lab-row {
-      display: grid; grid-template-columns: 80px 1fr 160px 160px 120px;
-      padding: 22px; border-bottom: 1px solid var(--border);
-      align-items: center; gap: 16px; transition: background .2s ease;
-      position: relative; cursor: pointer; text-decoration: none;
-    }
-    .lab-row:last-child { border-bottom: none; }
-    .lab-row:hover { background: rgba(255,255,255,0.015); }
-    .lab-row:hover .lab-title { color: var(--accent); }
-    .lab-row:hover .lab-arrow { transform: translate(4px,-4px); color: var(--accent); }
-    .lab-num { font-family: var(--mono); font-size: 12px; color: var(--text-3); letter-spacing: 0.05em; }
-    .lab-title { font-size: 17px; letter-spacing: -0.01em; color: var(--text); transition: color .2s ease; }
-    .lab-title .sub { display: block; font-size: 13px; color: var(--text-2); margin-top: 4px; letter-spacing: 0; }
-    .lab-kind { font-family: var(--mono); font-size: 11.5px; color: var(--text-2); letter-spacing: 0.06em; }
-    .lab-date { font-family: var(--mono); font-size: 11.5px; color: var(--text-3); letter-spacing: 0.06em; }
-    .lab-arrow { justify-self: end; font-family: var(--mono); color: var(--text-3); transition: all .2s ease; font-size: 16px; }
-    .lab-footer { display: flex; justify-content: flex-end; margin-top: 20px; }
-    .lab-view-all {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--text-2); padding: 10px 18px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--elev); transition: all .2s ease;
-    }
-    .lab-view-all:hover { color: var(--accent); border-color: oklch(0.76 0.16 55 / 0.4); background: var(--accent-dim); }
-    @media(max-width:900px) {
-      .lab-head { display: none; }
-      .lab-row { grid-template-columns: 40px 1fr auto; grid-template-rows: auto auto; padding: 18px 20px; }
-      .lab-kind { grid-column: 2; grid-row: 2; }
-      .lab-date { display: none; }
-    }
+
 
     /* ── About ─────────────────────────────────────────────────────────────── */
     .about { display: grid; grid-template-columns: repeat(12,1fr); gap: 24px; align-items: start; }
@@ -632,27 +578,7 @@
     .faq-a p { margin: 0; }
     .faq-a strong { color: var(--text); font-weight: 500; }
 
-    /* ── Newsletter ────────────────────────────────────────────────────────── */
-    .newsletter-wrap {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
-      border: 1px solid var(--border); border-radius: 18px; padding: 52px 48px;
-      background: radial-gradient(400px 240px at 0% 50%, oklch(0.76 0.16 55 / 0.08), transparent 70%), var(--surface);
-    }
-    .nl-copy h2 { font-weight: 500; font-size: clamp(26px,3.2vw,40px); letter-spacing: -0.03em; line-height: 1.06; margin: 14px 0 0; }
-    .nl-copy h2 .serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
-    .nl-copy p { font-size: 15.5px; line-height: 1.6; color: var(--text-2); margin: 14px 0 0; }
-    .nl-form { display: flex; flex-direction: column; gap: 10px; }
-    .nl-input { width: 100%; padding: 13px 16px; border: 1px solid var(--border); border-radius: 10px; background: rgba(255,255,255,0.03); color: var(--text); font-family: var(--sans); font-size: 15px; outline: none; transition: border-color .2s ease; }
-    .nl-input:focus { border-color: var(--accent); }
-    .nl-input::placeholder { color: var(--text-3); }
-    .nl-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 24px; border: none; border-radius: 10px; background: var(--accent); color: #140800; font-family: var(--sans); font-size: 15px; font-weight: 500; cursor: pointer; transition: all .15s ease; }
-    .nl-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px oklch(0.76 0.16 55 / 0.25); }
-    .nl-btn:disabled { opacity: .6; cursor: default; transform: none; }
-    .nl-note { font-family: var(--mono); font-size: 11.5px; color: var(--text-3); letter-spacing: .06em; margin: 4px 0 0; }
-    .nl-msg { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; margin: 2px 0 0; min-height: 18px; }
-    .nl-msg.ok    { color: var(--accent); }
-    .nl-msg.error { color: #f87171; }
-    @media(max-width:760px) { .newsletter-wrap { grid-template-columns: 1fr; padding: 36px 24px; gap: 28px; } }
+
 
     /* ── Contact ───────────────────────────────────────────────────────────── */
     .contact-wrap {
@@ -743,7 +669,7 @@
     html[data-theme="light"] .mock-dash, html[data-theme="light"] .mock-flow { background: #EDF0F4; }
     html[data-theme="light"] .mock-side, html[data-theme="light"] .mock-tile, html[data-theme="light"] .mock-chart { background: #E8EBF0; }
     html[data-theme="light"] .svc { background: linear-gradient(180deg,rgba(255,255,255,.95),rgba(237,240,244,.95)); }
-    html[data-theme="light"] .faq-list, html[data-theme="light"] .course-card { background: var(--surface); }
+    html[data-theme="light"] .faq-list { background: var(--surface); }
     html[data-theme="light"] .nav-cta { color: var(--bg); }
     html[data-theme="light"] .est-select, html[data-theme="light"] select.cf-input { background: #FFF; color: #0E1013; }
     html[data-theme="light"] .contact-wrap { background: radial-gradient(500px 280px at 85% 0%,oklch(0.76 0.16 55 / 0.07),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.97),rgba(237,240,244,.97)); }
@@ -875,9 +801,7 @@
         <nav class="nav-links" aria-label="Main navigation">
           <a href="#work">Work</a>
           <a href="#services">Services</a>
-          <a href="#courses">Courses</a>
           <a href="#tools">Tools</a>
-          <a href="#lab">Lab</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-right">
@@ -1832,52 +1756,7 @@
     </div>
   </section>
 
-  <!-- COURSES -->
-  <section id="courses">
-    <div class="shell">
-      <div class="section-head">
-        <div class="reveal">
-          <span class="eyebrow">Courses · 003</span>
-          <h2 class="section-title">Educational hub — <span class="serif">learn</span> the craft.</h2>
-        </div>
-        <p class="section-desc reveal">
-          Field-tested curricula drawn from live ERP projects. Built for business analysts, operations leads, and founders who want to understand ERP beyond the vendor pitch.
-        </p>
-      </div>
-      <div class="courses">
-        <a class="course-card reveal" href="#" id="course-01">
-          <div class="c-top">
-            <span class="badge">Course · 01</span>
-            <span class="lessons">8 LESSONS</span>
-          </div>
-          <h4>Requirements Gathering for ERP Projects</h4>
-          <p class="sub">How to run stakeholder workshops, write user stories that survive UAT, and translate business ambiguity into technical specs developers can build.</p>
-          <div class="progress"><span style="width:100%"></span></div>
-          <div class="meta-row"><span>Available now</span><span>~ 2 hrs</span></div>
-        </a>
-        <a class="course-card reveal" href="#" id="course-02">
-          <div class="c-top">
-            <span class="badge">Course · 02</span>
-            <span class="lessons">11 LESSONS</span>
-          </div>
-          <h4>Odoo for Manufacturing — from mapping to Go-Live</h4>
-          <p class="sub">BPMN discovery, module configuration, UAT orchestration, and the change-management playbook that gets 200 users live without pausing production.</p>
-          <div class="progress"><span style="width:65%"></span></div>
-          <div class="meta-row"><span>In production</span><span>~ 5 hrs</span></div>
-        </a>
-        <a class="course-card reveal" href="#" id="course-03">
-          <div class="c-top">
-            <span class="badge soon">Course · 03</span>
-            <span class="lessons">SOON</span>
-          </div>
-          <h4>BRD &amp; FRD Masterclass — Writing Specs That Stick</h4>
-          <p class="sub">A practical guide to writing business requirements documents, functional specs, and test cases that actually get signed off by stakeholders first time.</p>
-          <div class="progress"><span style="width:15%"></span></div>
-          <div class="meta-row"><span>Outlining</span><span>~ 4 hrs</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
+
 
   <!-- FREE TOOLS: COST ESTIMATOR -->
   <section id="tools">
@@ -1965,80 +1844,6 @@
     </div>
   </section>
 
-  <!-- LAB / GITHUB -->
-  <section id="lab">
-    <div class="shell">
-      <div class="section-head">
-        <div class="reveal">
-          <span class="eyebrow">Lab &amp; Articles · 005</span>
-          <h2 class="section-title">Writing &amp; <span class="serif">resources</span> from the field.</h2>
-        </div>
-        <p class="section-desc reveal">
-          Practical ERP guides, process templates, and open resources drawn from live implementation work across Bangladesh industries.
-        </p>
-      </div>
-
-      <div class="lab reveal">
-        <div class="lab-head">
-          <span>#</span><span>Article / Resource</span><span>Category</span><span>Published</span><span>↗</span>
-        </div>
-
-        <a class="lab-row" href="#" id="lab-01">
-          <span class="lab-num">001</span>
-          <div class="lab-title">The Business Analyst's Go-Live Checklist
-            <span class="sub">40-point checklist for Odoo ERP Go-Live — what to verify before you flip the switch</span>
-          </div>
-          <span class="lab-kind">Template · PDF</span>
-          <span class="lab-date">2026 — Q1</span>
-          <span class="lab-arrow">↗</span>
-        </a>
-
-        <a class="lab-row" href="#" id="lab-02">
-          <span class="lab-num">002</span>
-          <div class="lab-title">As-Is vs To-Be Process Mapping — A Practical Guide
-            <span class="sub">How to run a BPMN discovery session that your developers will actually understand</span>
-          </div>
-          <span class="lab-kind">Article</span>
-          <span class="lab-date">2026 — Q1</span>
-          <span class="lab-arrow">↗</span>
-        </a>
-
-        <a class="lab-row" href="#" id="lab-03">
-          <span class="lab-num">003</span>
-          <div class="lab-title">Odoo Module Selection Guide for Bangladesh Manufacturers
-            <span class="sub">Manufacturing, Inventory, Purchase, Accounting — which modules to start with and why</span>
-          </div>
-          <span class="lab-kind">Guide</span>
-          <span class="lab-date">2025 — Q4</span>
-          <span class="lab-arrow">↗</span>
-        </a>
-
-        <a class="lab-row" href="#" id="lab-04">
-          <span class="lab-num">004</span>
-          <div class="lab-title">Writing a BRD That Survives Stakeholder Review
-            <span class="sub">Structured templates and example sections for business requirements documents</span>
-          </div>
-          <span class="lab-kind">Template · DOCX</span>
-          <span class="lab-date">2025 — Q3</span>
-          <span class="lab-arrow">↗</span>
-        </a>
-
-        <a class="lab-row" href="#" id="lab-05">
-          <span class="lab-num">005</span>
-          <div class="lab-title">UAT Test Case Template for Odoo ERP
-            <span class="sub">Ready-to-use UAT test case format for Manufacturing, Purchase, and Accounting modules</span>
-          </div>
-          <span class="lab-kind">Template · XLSX</span>
-          <span class="lab-date">2025 — Q2</span>
-          <span class="lab-arrow">↗</span>
-        </a>
-      </div>
-
-      <div class="lab-footer">
-        <a class="lab-view-all" href="#" id="lab-view-all">View all resources <span>↗</span></a>
-      </div>
-    </div>
-  </section>
 
   <!-- ABOUT -->
   <section id="about">
@@ -2167,25 +1972,7 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER -->
-  <section id="newsletter" style="padding-top:0;">
-    <div class="shell">
-      <div class="newsletter-wrap reveal">
-        <div class="nl-copy">
-          <span class="eyebrow">Newsletter</span>
-          <h2>ERP <span class="serif">insights</span> from the field.</h2>
-          <p>Practical notes on Odoo implementation, business analysis, and digital transformation in Bangladesh — sent once or twice a month. No fluff.</p>
-        </div>
-        <div class="nl-form">
-          <input class="nl-input" type="text" id="nl-name" placeholder="Your name">
-          <input class="nl-input" type="email" id="nl-email" placeholder="Work email address">
-          <button class="nl-btn" id="nl-submit" onclick="subscribeNewsletter()">Subscribe →</button>
-          <p class="nl-note">No spam. Unsubscribe any time.</p>
-          <p class="nl-msg" id="nl-msg"></p>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- CONTACT -->
   <section id="contact">
@@ -2422,23 +2209,6 @@
         </div>`;
     }
 
-    // ── Newsletter ───────────────────────────────────────────────────────────
-    async function subscribeNewsletter() {
-      const name  = document.getElementById('nl-name').value.trim();
-      const email = document.getElementById('nl-email').value.trim();
-      const msg   = document.getElementById('nl-msg');
-      const btn   = document.getElementById('nl-submit');
-
-      if (!name || !email) { msg.textContent = 'Please fill in your name and email.'; msg.className = 'nl-msg error'; return; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter a valid email address.'; msg.className = 'nl-msg error'; return; }
-
-      btn.disabled = true; btn.textContent = 'Subscribing...';
-      // Replace with your actual form endpoint (Web3Forms, Formspree, etc.)
-      await new Promise(r => setTimeout(r, 800));
-      msg.textContent = '✓ You\'re subscribed. Welcome aboard.';
-      msg.className = 'nl-msg ok';
-      btn.textContent = 'Subscribed ✓';
-    }
 
     // ── Contact Form ─────────────────────────────────────────────────────────
     // FORMSPREE ENDPOINT: Once you verify hasib@metamorphosis.com.bd in Formspree,
