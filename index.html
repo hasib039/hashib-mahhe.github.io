@@ -118,29 +118,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap">
 
   <style>
     /* ── Design Tokens ─────────────────────────────────────────────────────── */
     :root {
-      --bg:          #08090A;
-      --bg-1:        #0E1114;
-      --surface:     #0F1215;
-      --elev:        #15191E;
-      --border:      #1A212A;
-      --border-2:    #2E3A4B;
+      --bg:          #11141A; /* Refined deep slate gray background */
+      --bg-1:        #161A22;
+      --surface:     #1B202A; /* Corporate card surface fill */
+      --elev:        #212733;
+      --border:      #2C3342;
+      --border-2:    #3E475B;
       --hair:        rgba(255,255,255,0.04);
-      --text:        #E6EDF3;
-      --text-2:      #8B949E;
-      --text-3:      #6E7681;
-      --accent:         oklch(0.82 0.20 162);
-      --accent-dim:     oklch(0.82 0.20 162 / 0.14);
-      --accent-glow:    oklch(0.82 0.20 162 / 0.35);
+      --text:        #F0F6FC; /* Off-White for clean legibility */
+      --text-2:      #919CAC;
+      --text-3:      #6E7B91;
+      --accent:         oklch(0.79 0.16 166); /* Sparingly used mint/teal accent */
+      --accent-dim:     oklch(0.79 0.16 166 / 0.12);
+      --accent-glow:    oklch(0.79 0.16 166 / 0.30);
       --sans:        'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
       --mono:        'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-      --serif: 'Instrument Serif', ui-serif, Georgia, serif;
-      --max:    1280px;
-      --gutter: 24px;
+      --serif:       'Instrument Serif', ui-serif, Georgia, serif;
+      --max:         1280px;
+      --gutter:      24px;
+    }
+
+    h1, h2, h3, h4, h5, h6, .section-title {
+      font-family: 'Plus Jakarta Sans', var(--sans);
+      font-weight: 600;
     }
 
     * { box-sizing: border-box; }
@@ -156,14 +161,10 @@
       text-rendering: optimizeLegibility;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: var(--mono);
-    }
-
     body {
       background:
-        radial-gradient(900px 600px at 80% -10%, oklch(0.82 0.20 162 / 0.04), transparent 60%),
-        radial-gradient(700px 500px at 10% 10%,  oklch(0.82 0.20 162 / 0.08),  transparent 70%),
+        radial-gradient(900px 600px at 80% -10%, oklch(0.79 0.16 166 / 0.03), transparent 60%),
+        radial-gradient(700px 500px at 10% 10%,  oklch(0.79 0.16 166 / 0.05),  transparent 70%),
         var(--bg);
       min-height: 100vh;
     }
@@ -213,15 +214,15 @@
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 500; letter-spacing: -0.01em; }
     .brand-mark {
       width: 30px; height: 30px; border-radius: 8px;
-      background: linear-gradient(135deg, var(--accent) 0%, oklch(0.55 0.14 162) 100%);
+      background: linear-gradient(135deg, var(--accent) 0%, oklch(0.55 0.14 166) 100%);
       box-shadow: 0 0 0 1px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.18);
       display: grid; place-items: center;
       font-family: var(--mono); font-size: 11px; font-weight: 600;
-      letter-spacing: 0.04em; color: #140A00;
+      letter-spacing: 0.04em; color: #11141A;
     }
     .brand-mark::after { content: "HA"; position: relative; z-index: 1; }
     .brand-name { display: flex; flex-direction: column; line-height: 1.1; }
-    .brand-name b  { font-family: var(--mono); font-weight: 500; font-size: 14px; letter-spacing: -0.01em; color: var(--text); }
+    .brand-name b  { font-weight: 500; font-size: 14px; letter-spacing: -0.01em; color: var(--text); }
     .brand-name em { font-style: normal; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); margin-top: 2px; }
     .nav-links { display: flex; gap: 6px; }
     .nav-right { display: flex; align-items: center; gap: 10px; }
@@ -288,7 +289,7 @@
     .hero-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 24px; align-items: end; }
     .hero-copy { grid-column: 1 / span 9; }
     .hero h1 {
-      font-family: var(--mono); font-weight: 500; letter-spacing: -0.035em;
+      font-family: var(--sans); font-weight: 500; letter-spacing: -0.035em;
       font-size: clamp(44px, 6.4vw, 90px); line-height: 0.98;
       margin: 28px 0 0; color: var(--text);
     }
@@ -302,15 +303,15 @@
     .btn {
       display: inline-flex; align-items: center; gap: 10px;
       font-size: 14px; font-weight: 500; padding: 12px 18px;
-      border-radius: 4px; border: 1px solid var(--border);
+      border-radius: 6px; border: 1px solid var(--border);
       background: var(--elev); color: var(--text); transition: all .2s ease;
     }
     .btn:hover { border-color: var(--accent); background: var(--surface); transform: translateY(-1px); }
     .btn-primary {
-      background: var(--accent); color: #140800;
+      background: var(--accent); color: #11141A;
       border-color: transparent; font-weight: 600;
     }
-    .btn-primary:hover { background: oklch(0.88 0.18 162); transform: translateY(-1px); }
+    .btn-primary:hover { background: oklch(0.85 0.18 166); transform: translateY(-1px); }
     .btn .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .5; }
 
     /* Meta strip */
@@ -357,19 +358,15 @@
     /* ── Proof / Case Study Cards ──────────────────────────────────────────── */
     .proof-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 24px; }
     .proof-card {
-      grid-column: span 6; border: 1px solid var(--border); border-radius: 6px;
+      grid-column: span 6; border: 1px solid var(--border); border-radius: 8px;
       background: var(--surface);
       padding: 24px;
       display: flex; flex-direction: column;
-      box-shadow: 4px 4px 0px var(--border);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: border-color .25s ease, transform .25s ease;
       position: relative; overflow: hidden;
     }
-    .proof-card:hover {
-      border-color: var(--accent);
-      box-shadow: 4px 4px 0px var(--accent-dim);
-      transform: translate3d(-2px, -2px, 0);
-    }
+    .proof-card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .proof-card .head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
     .proof-card .index { font-family: var(--mono); font-size: 11.5px; color: var(--text-3); letter-spacing: 0.1em; }
     .proof-card .status-chip {
@@ -377,7 +374,7 @@
       text-transform: uppercase; padding: 4px 9px; border-radius: 999px;
       border: 1px solid var(--border); color: var(--text-2);
     }
-    .proof-card .status-chip.live { color: var(--accent); border-color: oklch(0.82 0.20 162 / 0.4); }
+    .proof-card .status-chip.live { color: var(--accent); border-color: oklch(0.79 0.16 166 / 0.4); }
     .proof-card h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin: 22px 0 0; line-height: 1.2; }
     .proof-card .client { font-family: var(--mono); font-size: 12px; color: var(--text-3); margin-top: 6px; }
     .proof-card p.summary { font-size: 14px; line-height: 1.6; color: var(--text-2); margin: 16px 0 20px; }
@@ -421,14 +418,14 @@
     .mf-steps { display: flex; align-items: flex-start; position: relative; z-index: 1; }
     .mf-step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 7px; }
     .mf-node { width: 34px; height: 34px; border-radius: 7px; border: 1px solid var(--border-2); display: grid; place-items: center; font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.04em; color: var(--text-3); background: #0E1115; }
-    .mf-step.done .mf-node { border-color: oklch(0.82 0.20 162 / 0.35); color: oklch(0.82 0.20 162 / 0.7); background: var(--accent-dim); }
+    .mf-step.done .mf-node { border-color: oklch(0.79 0.16 166 / 0.35); color: oklch(0.79 0.16 166 / 0.7); background: var(--accent-dim); }
     .mf-step.active .mf-node { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
     .mf-lbl { font-family: var(--mono); font-size: 9px; color: var(--text-3); letter-spacing: 0.09em; text-transform: uppercase; text-align: center; line-height: 1.35; }
     .mf-step.done .mf-lbl, .mf-step.active .mf-lbl { color: var(--text-2); }
     .mf-conn { flex: none; width: 28px; height: 1px; background: var(--border-2); margin-top: 17px; position: relative; }
     .mf-conn::after { content: "▸"; position: absolute; right: -5px; top: -7px; font-size: 9px; color: var(--border-2); }
-    .mf-conn.lit { background: oklch(0.82 0.20 162 / 0.4); }
-    .mf-conn.lit::after { color: oklch(0.82 0.20 162 / 0.5); }
+    .mf-conn.lit { background: oklch(0.79 0.16 166 / 0.4); }
+    .mf-conn.lit::after { color: oklch(0.79 0.16 166 / 0.5); }
     .mf-meta { font-family: var(--mono); font-size: 9.5px; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; position: relative; z-index: 1; padding-top: 2px; }
 
     /* Card chips & impact */
@@ -447,22 +444,18 @@
     /* ── Services ──────────────────────────────────────────────────────────── */
     .services-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 24px; }
     .svc {
-      grid-column: span 6; border: 1px solid var(--border); border-radius: 6px; padding: 28px;
+      grid-column: span 6; border: 1px solid var(--border); border-radius: 8px; padding: 28px;
       background: var(--surface);
-      box-shadow: 4px 4px 0px var(--border);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
       position: relative; overflow: hidden;
+      transition: border-color .25s ease;
     }
-    .svc:hover {
-      border-color: var(--accent);
-      box-shadow: 4px 4px 0px var(--accent-dim);
-      transform: translate3d(-2px, -2px, 0);
-    }
+    .svc:hover { border-color: var(--accent); }
     .svc.enterprise {
       background:
-        radial-gradient(600px 200px at 100% 0%, oklch(0.82 0.20 162 / 0.08), transparent 60%),
+        radial-gradient(600px 200px at 100% 0%, oklch(0.79 0.16 166 / 0.08), transparent 60%),
         var(--surface);
-      border-color: oklch(0.82 0.20 162 / 0.18);
+      border-color: oklch(0.79 0.16 166 / 0.18);
     }
     .svc .svc-kicker { display: flex; align-items: center; justify-content: space-between; }
     .svc h3 { font-size: 28px; font-weight: 500; letter-spacing: -0.025em; margin: 18px 0 8px; line-height: 1.1; }
@@ -472,7 +465,7 @@
     .svc li { padding: 14px 0; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: flex-start; font-size: 14px; color: var(--text); }
     .svc li::before { content: ""; flex: none; width: 14px; height: 14px; border-radius: 3px; margin-top: 3px; border: 1px solid var(--border-2); position: relative; }
     .svc.enterprise li { position: relative; }
-    .svc.enterprise li::before { border-color: oklch(0.82 0.20 162 / 0.5); }
+    .svc.enterprise li::before { border-color: oklch(0.79 0.16 166 / 0.5); }
     .svc.enterprise li::after { content: ""; position: absolute; width: 6px; height: 6px; margin-top: 7px; margin-left: 4px; background: var(--accent); border-radius: 1px; opacity: 1; }
     .svc .svc-footer { margin-top: 22px; display: flex; justify-content: space-between; align-items: center; }
     @media(max-width:860px) { .svc { grid-column: 1/-1; } }
@@ -481,10 +474,9 @@
 
     /* ── Free Tools (Cost Estimator) ───────────────────────────────────────── */
     .tools-wrap {
-      border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+      border: 1px solid var(--border); border-radius: 18px; overflow: hidden;
       display: grid; grid-template-columns: 1fr 1fr;
       background: var(--surface);
-      box-shadow: 4px 4px 0px var(--border);
     }
     .tool-left {
       padding: 48px;
@@ -500,7 +492,7 @@
     .est-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
     .est-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3); }
     .est-input, .est-select {
-      padding: 11px 14px; border: 1px solid var(--border); border-radius: 4px;
+      padding: 11px 14px; border: 1px solid var(--border); border-radius: 6px;
       background: rgba(255,255,255,0.03); color: var(--text); font-family: var(--sans);
       font-size: 14px; outline: none; transition: border-color .2s; width: 100%;
     }
@@ -514,11 +506,11 @@
       color: #140800; font-family: var(--sans); font-size: 15px; font-weight: 600;
       cursor: pointer; transition: all .15s; width: 100%; margin-top: 8px;
     }
-    .est-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px oklch(0.82 0.20 162 / 0.25); }
+    .est-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px oklch(0.79 0.16 166 / 0.25); }
     .result-panel {
-      background: var(--elev); border: 1px solid var(--border); border-radius: 4px;
+      background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 6px;
       padding: 28px; display: flex; flex-direction: column; gap: 16px;
-      box-shadow: 2px 2px 0px var(--border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
     }
     .result-label { font-family: var(--mono); font-size: 11px; color: var(--text-3); letter-spacing: 0.12em; text-transform: uppercase; }
     .result-range { font-size: 38px; font-weight: 500; letter-spacing: -0.035em; color: var(--accent); line-height: 1; margin-top: 4px; }
@@ -561,18 +553,7 @@
     }
     .testi-eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--border-2); }
     .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .testi-card {
-      border: 1px solid var(--border); border-radius: 6px; padding: 28px;
-      background: var(--surface);
-      display: flex; flex-direction: column; gap: 20px;
-      box-shadow: 4px 4px 0px var(--border);
-      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
-    }
-    .testi-card:hover {
-      border-color: var(--accent);
-      box-shadow: 4px 4px 0px var(--accent-dim);
-      transform: translate3d(-2px, -2px, 0);
-    }
+    .testi-card { border: 1px solid var(--border); border-radius: 8px; padding: 28px; background: var(--surface); display: flex; flex-direction: column; gap: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
     .testi-stars { color: var(--accent); font-size: 14px; letter-spacing: 2px; }
     .testi-quote { font-size: 15px; line-height: 1.7; color: var(--text-2); margin: 0; font-style: italic; }
     .testi-quote::before { content: '"'; }
@@ -589,8 +570,8 @@
     /* ── FAQ ───────────────────────────────────────────────────────────────── */
     .faq-list {
       display: flex; flex-direction: column; gap: 0;
-      border-radius: 6px; overflow: hidden; border: 1px solid var(--border); background: var(--surface);
-      box-shadow: 4px 4px 0px var(--border);
+      border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: var(--surface);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
     .faq-item { border-bottom: 1px solid var(--border); }
     .faq-item:last-child { border-bottom: none; }
@@ -612,13 +593,13 @@
 
     /* ── Contact ───────────────────────────────────────────────────────────── */
     .contact-wrap {
-      border: 1px solid var(--border); border-radius: 6px; padding: 56px 48px;
+      border: 1px solid var(--border); border-radius: 8px; padding: 56px 48px;
       background:
-        radial-gradient(500px 280px at 85% 0%, oklch(0.82 0.20 162 / 0.12), transparent 70%),
+        radial-gradient(500px 280px at 85% 0%, oklch(0.79 0.16 166 / 0.12), transparent 70%),
         var(--surface);
       display: grid; grid-template-columns: repeat(12,1fr); gap: 24px;
       align-items: end; position: relative; overflow: hidden;
-      box-shadow: 4px 4px 0px var(--border);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
     }
     .contact-wrap h2 { grid-column: 1 / span 8; font-weight: 500; letter-spacing: -0.03em; font-size: clamp(32px,4.4vw,58px); line-height: 1.02; margin: 16px 0 0; }
     .contact-wrap h2 .serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
@@ -637,14 +618,14 @@
     .cf-head { font-size: 17px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 20px; color: var(--text); }
     .cf-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
     .cf-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); }
-    .cf-input { padding: 11px 14px; border: 1px solid var(--border); border-radius: 4px; background: rgba(255,255,255,0.03); color: var(--text); font-family: var(--sans); font-size: 14px; outline: none; transition: border-color .2s; width: 100%; box-sizing: border-box; }
+    .cf-input { padding: 11px 14px; border: 1px solid var(--border); border-radius: 6px; background: rgba(255,255,255,0.03); color: var(--text); font-family: var(--sans); font-size: 14px; outline: none; transition: border-color .2s; width: 100%; box-sizing: border-box; }
     select.cf-input { background: #15181D; color: var(--text); }
     .cf-input:focus { border-color: var(--accent); }
     .cf-input::placeholder { color: var(--text-3); }
     .cf-textarea { resize: vertical; min-height: 100px; font-family: var(--sans); }
     .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .cf-submit { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border: none; border-radius: 8px; background: var(--accent); color: #140800; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: pointer; transition: all .15s; margin-top: 4px; }
-    .cf-submit:hover { transform: translateY(-1px); box-shadow: 0 4px 14px oklch(0.82 0.20 162 / 0.22); }
+    .cf-submit:hover { transform: translateY(-1px); box-shadow: 0 4px 14px oklch(0.79 0.16 166 / 0.22); }
     .cf-submit:disabled { opacity: .6; cursor: default; transform: none; }
     .cf-msg { font-family: var(--mono); font-size: 11.5px; letter-spacing: .06em; margin-top: 10px; min-height: 18px; }
     .cf-msg.ok    { color: var(--accent); }
@@ -689,9 +670,9 @@
 
     /* ── Light theme ───────────────────────────────────────────────────────── */
     html[data-theme="light"] {
-      --bg: #F5F7FA; --bg-1: #EEF1F5; --surface: #FFFFFF; --elev: #EDF0F4;
-      --border: #E2E6EC; --border-2: #CBD0D9; --hair: rgba(0,0,0,0.05);
-      --text: #0E1013; --text-2: #4A5265; --text-3: #8A909E;
+      --bg: #F3F4F6; --bg-1: #E5E7EB; --surface: #FFFFFF; --elev: #F9FAFB;
+      --border: #D1D5DB; --border-2: #9CA3AF; --hair: rgba(0,0,0,0.04);
+      --text: #111827; --text-2: #4B5563; --text-3: #9CA3AF;
     }
     html[data-theme="light"] body { background: radial-gradient(900px 600px at 80% -10%, rgba(220,130,40,0.05), transparent 60%), var(--bg); }
     html[data-theme="light"] .noise { opacity: 0; }
@@ -703,7 +684,7 @@
     html[data-theme="light"] .faq-list { background: var(--surface); }
     html[data-theme="light"] .nav-cta { color: var(--bg); }
     html[data-theme="light"] .est-select, html[data-theme="light"] select.cf-input { background: #FFF; color: #0E1013; }
-    html[data-theme="light"] .contact-wrap { background: radial-gradient(500px 280px at 85% 0%,oklch(0.82 0.20 162 / 0.07),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.97),rgba(237,240,244,.97)); }
+    html[data-theme="light"] .contact-wrap { background: radial-gradient(500px 280px at 85% 0%,oklch(0.79 0.16 166 / 0.07),transparent 70%),linear-gradient(180deg,rgba(255,255,255,.97),rgba(243,244,246,.97)); }
     html[data-theme="light"] .sig-name { background: linear-gradient(180deg,var(--text) 0%,var(--text) 55%,var(--text-3) 100%); -webkit-background-clip: text; background-clip: text; }
 
     /* WhatsApp float */
@@ -728,11 +709,11 @@
       width: 100%;
       max-width: 220px;
       aspect-ratio: 3 / 4;
-      border-radius: 8px;
+      border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border-2);
       background: var(--surface);
-      box-shadow: 4px 4px 0px var(--border);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
       transition: border-color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
       transform: translate3d(0, 0, 0);
       will-change: transform;
@@ -749,8 +730,8 @@
     }
     .avatar-wrap:hover {
       border-color: var(--accent);
-      transform: translate3d(-1px, -1px, 0);
-      box-shadow: 4px 4px 0px var(--accent-dim);
+      transform: translate3d(0, -2px, 0) scale(1.02);
+      box-shadow: 0 16px 48px oklch(0.79 0.16 166 / 0.15);
     }
     .avatar-wrap:hover img {
       transform: translate3d(0, 0, 0) scale(1.05);
@@ -766,29 +747,23 @@
       cursor: pointer; transition: all .2s ease;
     }
     .ref-filter-btn:hover { color: var(--text); border-color: var(--border-2); }
-    .ref-filter-btn.active { color: var(--accent); border-color: oklch(0.82 0.20 162 / 0.45); background: var(--accent-dim); }
+    .ref-filter-btn.active { color: var(--accent); border-color: oklch(0.79 0.16 166 / 0.45); background: var(--accent-dim); }
     
     .ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
     .ref-item-card {
-      border: 1px solid var(--border); border-radius: 6px; padding: 20px;
-      background: var(--surface);
-      display: flex; flex-direction: column; justify-content: space-between;
-      min-height: 180px;
-      box-shadow: 4px 4px 0px var(--border);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, opacity 0.3s ease;
+      border: 1px solid var(--border); border-radius: 12px; padding: 20px;
+      background: linear-gradient(180deg, rgba(21,24,29,0.4) 0%, rgba(14,16,19,0.4) 100%);
+      backdrop-filter: blur(10px); display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 180px; transition: border-color .2s ease, transform .2s ease, opacity .3s ease;
     }
-    .ref-item-card:hover {
-      border-color: var(--accent);
-      box-shadow: 4px 4px 0px var(--accent-dim);
-      transform: translate3d(-1px, -1px, 0);
-    }
+    .ref-item-card:hover { border-color: var(--border-2); transform: translateY(-1px); }
     .ref-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
     .ref-client-name { font-size: 15px; font-weight: 500; color: var(--text); letter-spacing: -0.015em; }
     .ref-badge {
       font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase;
       padding: 3px 7px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-2);
     }
-    .ref-badge.manufacturing { color: oklch(0.82 0.20 162 / 0.8); border-color: oklch(0.82 0.20 162 / 0.25); background: oklch(0.82 0.20 162 / 0.05); }
+    .ref-badge.manufacturing { color: oklch(0.79 0.16 166 / 0.8); border-color: oklch(0.79 0.16 166 / 0.25); background: oklch(0.79 0.16 166 / 0.05); }
     .ref-badge.retail { color: #58a6ff; border-color: rgba(56,139,253,0.25); background: rgba(56,139,253,0.05); }
     .ref-badge.services { color: #aff5b4; border-color: rgba(46,160,67,0.25); background: rgba(46,160,67,0.05); }
     .ref-badge.ngo { color: #d3a4ff; border-color: rgba(187,128,255,0.25); background: rgba(187,128,255,0.05); }
@@ -812,576 +787,10 @@
       }
       .avatar-wrap {
         max-width: 140px !important;
-        border-radius: 8px !important;
+        border-radius: 16px !important;
       }
     }
-  
-    /* =========================================================================
-       ── Enterprise ERP Dashboard Styles ──────────────────────────────────────
-       ========================================================================= */
-    html, body {
-      height: 100%;
-      overflow: hidden;
-    }
-    
-    .dashboard-container {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-      background-color: var(--bg);
-      position: relative;
-    }
-    
-    .sidebar {
-      background-color: var(--surface);
-      border-right: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      padding: 24px;
-      justify-content: space-between;
-      height: 100%;
-      z-index: 10;
-    }
-    
-    .sidebar-top {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-    
-    .sidebar .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 4px 0;
-    }
-    
-    .sidebar .brand-name b {
-      font-family: var(--mono);
-      font-size: 13.5px;
-      letter-spacing: 0.05em;
-      color: var(--text);
-    }
-    
-    .sidebar .brand-name em {
-      font-family: var(--mono);
-      font-style: normal;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      display: block;
-      margin-top: 3px;
-    }
-    
-    /* Profile Badge in Sidebar */
-    .profile-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--bg-1);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-      border-radius: 6px;
-    }
-    
-    .profile-avatar-mini {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--border-2);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    
-    .profile-avatar-mini img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .status-pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      border: 2px solid var(--bg-1);
-      animation: pulse-mini 2s infinite;
-    }
-    
-    @keyframes pulse-mini {
-      0% { box-shadow: 0 0 0 0 oklch(0.82 0.20 162 / 0.4); }
-      70% { box-shadow: 0 0 0 4px oklch(0.82 0.20 162 / 0); }
-      100% { box-shadow: 0 0 0 0 oklch(0.82 0.20 162 / 0); }
-    }
-    
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.25;
-    }
-    
-    .profile-name {
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    
-    .profile-status {
-      font-family: var(--mono);
-      font-size: 9px;
-      color: var(--accent);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    
-    /* Sidebar Navigation Tabs */
-    .sidebar-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    
-    .nav-tab {
-      appearance: none;
-      background: transparent;
-      border: 1px solid transparent;
-      border-radius: 4px;
-      color: var(--text-2);
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 500;
-      padding: 10px 12px;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.15s ease;
-      width: 100%;
-    }
-    
-    .nav-tab:hover {
-      color: var(--text);
-      background: var(--hair);
-    }
-    
-    .nav-tab.active {
-      color: var(--accent);
-      background: var(--accent-dim);
-      border-color: oklch(0.82 0.20 162 / 0.15);
-    }
-    
-    .tab-icon {
-      flex: none;
-      opacity: 0.7;
-    }
-    
-    .nav-tab.active .tab-icon {
-      opacity: 1;
-      stroke: var(--accent);
-    }
-    
-    /* Sidebar Bottom info */
-    .sidebar-bottom {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      border-top: 1px solid var(--border);
-      padding-top: 18px;
-    }
-    
-    .sidebar-actions {
-      display: flex;
-      align-items: center;
-    }
-    
-    .theme-toggle-sidebar {
-      appearance: none;
-      background: var(--bg-1);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-2);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      padding: 8px 12px;
-      width: 100%;
-      transition: all 0.15s ease;
-    }
-    
-    .theme-toggle-sidebar:hover {
-      color: var(--text);
-      border-color: var(--border-2);
-      background: var(--elev);
-    }
-    
-    .theme-toggle-sidebar .icon-sun { display: block; }
-    .theme-toggle-sidebar .icon-moon { display: none; }
-    html[data-theme="light"] .theme-toggle-sidebar .icon-sun { display: none; }
-    html[data-theme="light"] .theme-toggle-sidebar .icon-moon { display: block; }
-    
-    .sidebar-footer {
-      font-family: var(--mono);
-      font-size: 9px;
-      letter-spacing: 0.05em;
-      color: var(--text-3);
-    }
-    
-    /* Main panel wrapper */
-    .main-panel {
-      overflow-y: auto;
-      height: 100vh;
-      width: 100%;
-      padding: 48px;
-      background-color: var(--bg);
-      position: relative;
-    }
-    
-    /* Tab panel animations */
-    .tab-panel {
-      display: none;
-      flex-direction: column;
-      gap: 40px;
-      animation: panelFadeIn 0.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-      width: 100%;
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-    
-    .tab-panel.active {
-      display: flex;
-    }
-    
-    @keyframes panelFadeIn {
-      from { opacity: 0; transform: translate3d(0, 4px, 0); }
-      to { opacity: 1; transform: translate3d(0, 0, 0); }
-    }
-    
-    /* ── Overview Dashboard Panel (Hero Redesign) ─────────────────────────── */
-    .overview-header {
-      display: grid;
-      grid-template-columns: 1fr 180px;
-      gap: 32px;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 32px;
-    }
-    
-    .oh-left {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    
-    .oh-left h1 {
-      font-family: var(--mono);
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.1;
-      margin: 0;
-      font-weight: 600;
-      color: var(--text);
-    }
-    
-    .oh-left h1 .italic {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-    }
-    
-    .oh-left h1 .accent {
-      color: var(--accent);
-    }
-    
-    .oh-sub {
-      font-family: var(--mono);
-      font-size: 13.5px;
-      color: var(--text-2);
-      margin: 0;
-      letter-spacing: -0.01em;
-    }
-    
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: 4px;
-      background: var(--accent-dim);
-      border: 1px solid oklch(0.82 0.20 162 / 0.15);
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      align-self: flex-start;
-      margin-bottom: 6px;
-    }
-    
-    .status-badge .status-pulse-dot {
-      position: static;
-      border: none;
-      width: 6px;
-      height: 6px;
-    }
-    
-    .oh-right {
-      display: flex;
-      justify-content: flex-end;
-    }
-    
-    .profile-card-large {
-      width: 140px;
-      height: 180px;
-      border-radius: 6px;
-      border: 1px solid var(--border-2);
-      background: var(--surface);
-      overflow: hidden;
-      box-shadow: 4px 4px 0px var(--border);
-    }
-    
-    .profile-card-large img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    /* KPI Metric Cards Grid */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    
-    .kpi-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 24px;
-      box-shadow: 4px 4px 0px var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    
-    .kpi-meta {
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-3);
-    }
-    
-    .kpi-val {
-      font-family: var(--mono);
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-    }
-    
-    .kpi-desc {
-      font-size: 13px;
-      color: var(--text-2);
-      line-height: 1.4;
-      margin: 0;
-    }
-    
-    /* Interactive Dashboard Chart block */
-    .chart-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 24px;
-      box-shadow: 4px 4px 0px var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    
-    .chart-title {
-      font-family: var(--mono);
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .chart-status {
-      font-size: 10px;
-      color: var(--accent);
-      background: var(--accent-dim);
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    
-    .chart-wrapper {
-      width: 100%;
-      height: 220px;
-      background: var(--bg-1);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 16px;
-      display: flex;
-      align-items: flex-end;
-      position: relative;
-    }
-    
-    .chart-axis-y {
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      bottom: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-family: var(--mono);
-      font-size: 9px;
-      color: var(--text-3);
-    }
-    
-    .chart-grid-lines {
-      position: absolute;
-      left: 50px;
-      right: 16px;
-      top: 16px;
-      bottom: 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      pointer-events: none;
-    }
-    
-    .chart-grid-line {
-      width: 100%;
-      height: 1px;
-      background: var(--border);
-      opacity: 0.5;
-    }
-    
-    .chart-svg-container {
-      position: absolute;
-      left: 50px;
-      right: 16px;
-      top: 16px;
-      bottom: 32px;
-    }
-    
-    .chart-labels-x {
-      position: absolute;
-      left: 50px;
-      right: 16px;
-      bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--mono);
-      font-size: 9px;
-      color: var(--text-3);
-    }
-    
-    /* ── Responsive Styling Overrides for Mobile ────────────────────────────── */
-    @media (max-width: 860px) {
-      html, body {
-        height: auto;
-        overflow: visible;
-      }
-      
-      .dashboard-container {
-        grid-template-columns: 1fr;
-        height: auto;
-        overflow: visible;
-      }
-      
-      .sidebar {
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 16px 20px;
-        position: sticky;
-        top: 0;
-        background: rgba(14,16,19,0.9);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-      }
-      
-      .sidebar-top {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        width: 100%;
-      }
-      
-      .profile-card {
-        padding: 4px 8px;
-        background: transparent;
-        border: none;
-      }
-      
-      .profile-info {
-        display: none;
-      }
-      
-      .sidebar-nav {
-        flex-direction: row;
-        overflow-x: auto;
-        width: 100%;
-        padding: 8px 0 2px 0;
-        margin-top: 8px;
-        gap: 8px;
-        scrollbar-width: none; /* Firefox */
-      }
-      
-      .sidebar-nav::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
-      }
-      
-      .nav-tab {
-        flex: none;
-        font-size: 11px;
-        padding: 6px 12px;
-        white-space: nowrap;
-      }
-      
-      .sidebar-bottom {
-        display: none;
-      }
-      
-      .main-panel {
-        height: auto;
-        overflow: visible;
-        padding: 24px 20px;
-      }
-      
-      .overview-header {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding-bottom: 24px;
-      }
-      
-      .oh-right {
-        justify-content: flex-start;
-      }
-      
-      .profile-card-large {
-        width: 110px;
-        height: 140px;
-      }
-      
-      .kpi-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-    }
-</style>
+  </style>
 </head>
 
 <body>
@@ -1393,171 +802,96 @@
     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.737 5.474 2.027 7.773L0 32l8.468-2.007A15.931 15.931 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.05 22.647c-.34.957-1.993 1.83-2.726 1.946-.695.108-1.573.153-2.536-.16-.585-.193-1.337-.45-2.295-.882-4.037-1.742-6.675-5.836-6.878-6.107-.203-.271-1.657-2.202-1.657-4.2 0-1.997 1.046-2.98 1.419-3.385.373-.404.814-.505 1.085-.505.271 0 .542.003.779.014.25.012.585-.095.915.697.34.812 1.152 2.813 1.255 3.016.103.203.171.44.034.711-.135.27-.203.44-.406.677-.203.237-.427.528-.609.71-.203.203-.415.422-.178.827.237.406 1.053 1.737 2.26 2.814 1.553 1.384 2.862 1.813 3.267 2.016.405.203.64.17.878-.102.237-.27 1.016-1.186 1.286-1.592.271-.406.542-.338.915-.203.373.135 2.37 1.118 2.777 1.32.406.203.677.304.778.473.102.17.102.982-.237 1.94z"/></svg>
   </a>
 
-  
-  <div class="dashboard-container">
-    <!-- Persistence Left Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-top">
-        <div class="brand">
+  <!-- NAV -->
+  <header class="nav">
+    <div class="shell">
+      <div class="nav-inner">
+        <a class="brand" href="#">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name"><b>H.A.M.</b><em>ERP &amp; Dev</em></span>
-        </div>
-        
-        <div class="profile-card">
-          <div class="profile-avatar-mini">
-            <img src="./mahi.png" alt="Hashib Anjum Mahhe" />
-            <span class="status-pulse-dot"></span>
-          </div>
-          <div class="profile-info">
-            <span class="profile-name">Hashib Anjum</span>
-            <span class="profile-status">Available</span>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Nav Tabs -->
-      <nav class="sidebar-nav" aria-label="Dashboard navigation">
-        <button class="nav-tab active" data-target="panel-overview">
-          <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-          Overview
-        </button>
-        <button class="nav-tab" data-target="panel-work">
-          <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          Project Ledger
-        </button>
-        <button class="nav-tab" data-target="panel-services">
-          <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          Services Map
-        </button>
-        <button class="nav-tab" data-target="panel-estimator">
-          <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          Estimator
-        </button>
-        <button class="nav-tab" data-target="panel-about">
-          <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          Profile / FAQ
-        </button>
-        <button class="nav-tab" data-target="panel-contact">
-          <svg class="tab-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Contact Inbox
-        </button>
-      </nav>
-      
-      <!-- Theme Switcher and Footer meta in sidebar bottom -->
-      <div class="sidebar-bottom">
-        <div class="sidebar-actions">
-          <button class="theme-toggle-sidebar" id="theme-toggle-sidebar" aria-label="Toggle light/dark theme">
-            <svg class="icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg class="icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            <span class="theme-text" style="font-family:var(--mono);font-size:11px;margin-left:8px;color:var(--text-2);">Dark Mode</span>
+          <span class="brand-name"><b>Hashib Anjum Mahhe</b><em>ERP · Business Analyst</em></span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#services">Expertise</a>
+          <a href="#work">Case Studies</a>
+          <a href="#tools">Tech Lab</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
-        </div>
-        <div class="sidebar-footer">
-          © 2026 H.A.M.
+          <a class="nav-cta" href="#contact" id="book-call-cta">Book a call <span class="arrow">↗</span></a>
         </div>
       </div>
-    </aside>
-    
-    <!-- Main Panel content grid -->
-    <main class="main-panel">
-      <!-- PANEL: Overview (Hero redesign) -->
-      <div id="panel-overview" class="tab-panel active">
-        
-      <div class="overview-header">
-        <div class="oh-left">
-          <div class="status-badge">
-            <span class="status-pulse-dot"></span>
-            <span>Active Server SLA Configuration — Q3 2026 Ready</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="shell">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <div class="status">
+            <span class="pulse"></span>
+            <span>Available for Odoo consulting &amp; implementations — Q3 2026</span>
           </div>
-          <h1>System Dashboard: <span class="italic">Hashib Anjum Mahhe</span></h1>
-          <p class="oh-sub">Odoo ERP Functional Consultant &amp; Business Analyst · Dhaka, Bangladesh</p>
+          <div class="name-byline" aria-hidden="true">
+            <span class="nb-rule"></span>
+            <span class="nb-name">Hashib Anjum Mahhe</span>
+            <span class="nb-meta">Portfolio · 2026</span>
+          </div>
+          <h1 style="font-size: clamp(38px, 5vw, 68px); line-height: 1.05; font-family: 'Plus Jakarta Sans', var(--sans); font-weight: 700; letter-spacing: -0.03em; margin: 24px 0 0;">
+            Hashib Anjum Mahhe
+          </h1>
+          <p class="hero-h1-tag" style="font-size: clamp(14px, 1.5vw, 20px); color: var(--accent); margin-top: 12px; font-weight: 500; font-family: var(--sans); line-height: 1.4;">
+            Odoo Technical &amp; Functional Professional | Bridging Enterprise Infrastructure &amp; Financial Logic
+          </p>
         </div>
-        <div class="oh-right">
-          <div class="profile-card-large">
+        <div class="hero-avatar reveal">
+          <div class="avatar-wrap">
             <img src="./mahi.png" alt="Hashib Anjum Mahhe" />
           </div>
         </div>
-      </div>
+        <p class="hero-sub reveal">
+          <strong style="color:var(--text);font-weight:600">I map complex business workflows into bulletproof enterprise systems.</strong>
+          As an experienced functional and technical engineer at <strong style="color:var(--text);font-weight:500">Metamorphosis Ltd.</strong> (Bangladesh's first Odoo Country Partner), I lead requirements analysis, database tuning, backend scripting, and operational rollout. I bridge technical pipelines with precise accounting and reporting logic.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#work" id="hero-work-btn">See Case Studies <span>↗</span></a>
+          <a class="btn" href="#services" id="hero-services-btn">Explore Expertise Matrix <span class="dot"></span></a>
+        </div>
 
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-meta">ERP IMPLEMENTATIONS</div>
-          <div class="kpi-val">55+</div>
-          <div class="kpi-desc">Delivered across Manufacturing, SCM, Retail, &amp; NGOs</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-meta">EXPERIENCE &amp; ROLE</div>
-          <div class="kpi-val">4+ Yrs</div>
-          <div class="kpi-desc">Business Analyst at Metamorphosis Ltd. (Odoo Partner)</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-meta">SYSTEM SLA</div>
-          <div class="kpi-val">99.9%</div>
-          <div class="kpi-desc">Docker, Linux SysAdmin, PostgreSQL database tuning</div>
-        </div>
-      </div>
-
-      <div class="chart-block">
-        <div class="chart-title">
-          <span>Enterprise Core Modules Integration Scale</span>
-          <span class="chart-status">Live Telemetry</span>
-        </div>
-        <div class="chart-wrapper">
-          <div class="chart-axis-y">
-            <span>100%</span>
-            <span>50%</span>
-            <span>0%</span>
+        <div class="meta-strip reveal">
+          <div class="meta-cell">
+            <div class="meta-k">Based in</div>
+            <div class="meta-v">Dhaka, Bangladesh <span class="small">· GMT+6</span></div>
           </div>
-          <div class="chart-grid-lines">
-            <div class="chart-grid-line"></div>
-            <div class="chart-grid-line"></div>
-            <div class="chart-grid-line"></div>
+          <div class="meta-cell">
+            <div class="meta-k">Current Role</div>
+            <div class="meta-v">Business Analyst <span class="small">· Metamorphosis Ltd.</span></div>
           </div>
-          <div class="chart-svg-container">
-            <svg viewBox="0 0 500 170" width="100%" height="100%" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="dashboard-gradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path d="M 0 140 Q 75 110 150 70 T 300 40 T 450 20 L 500 15 L 500 170 L 0 170 Z" fill="url(#dashboard-gradient)" />
-              <path d="M 0 140 Q 75 110 150 70 T 300 40 T 450 20 L 500 15" fill="none" stroke="var(--accent)" stroke-width="2" />
-              <circle cx="150" cy="70" r="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="2" />
-              <circle cx="300" cy="40" r="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="2" />
-              <circle cx="450" cy="20" r="4" fill="var(--bg)" stroke="var(--accent)" stroke-width="2" />
-            </svg>
+          <div class="meta-cell">
+            <div class="meta-k">Focus areas</div>
+            <div class="meta-v">MRP · SCM · Finance <span class="small">· HR &amp; Operations</span></div>
           </div>
-          <div class="chart-labels-x">
-            <span>Discovery</span>
-            <span>Custom Development</span>
-            <span>Server Deployment</span>
-            <span>UAT &amp; Go-Live</span>
+          <div class="meta-cell">
+            <div class="meta-k">Contact</div>
+            <div class="meta-v"><a href="mailto:hasib@metamorphosis.com.bd">hasib@metamorphosis.com.bd</a> <span class="small">· +8801612392318</span></div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="hero-sub" style="margin-top: 16px; max-width: 780px;">
-        <strong style="color:var(--text);font-weight:600">Welcome to my professional ERP &amp; Systems registry.</strong>
-        I translate complex business requirements into clear, functional ERP solutions that run on bulletproof systems. 
-        Use the tab panel navigation on the left to inspect my full case study ledger, system topology map, implementation cost estimator, and client testimonials.
-      </p>
-
-      <div class="hero-actions" style="margin-top: 16px;">
-        <button class="btn btn-primary" onclick="document.querySelector('[data-target=panel-work]').click();">Explore Client Ledger <span>↗</span></button>
-        <button class="btn" onclick="document.querySelector('[data-target=panel-contact]').click();">Scope a Rollout <span class="dot"></span></button>
-      </div>
-
-      </div>
-      
-      <!-- PANEL: Work (References Ledger) -->
-      <div id="panel-work" class="tab-panel">
-        <section id="work">
+  <!-- WORK / CASE STUDIES -->
+  <section id="work">
     <div class="shell">
       <div class="section-head">
         <div class="reveal">
           <span class="eyebrow">Selected work · 001</span>
-          <h2 class="section-title">ERP Implementation &amp; <span class="serif">Case Studies</span> in Bangladesh.</h2>
+          <h2 class="section-title">Case Studies &amp; Reports Registry</h2>
         </div>
         <p class="section-desc reveal">
           Honest samples of ERP implementations — rewritten processes, retrained teams, and measurable operational gains across manufacturing, energy, and IT.
@@ -1592,9 +926,9 @@
               </div>
               <div class="mock-chart">
                 <svg viewBox="0 0 300 80" preserveAspectRatio="none">
-                  <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="oklch(0.82 0.20 162)" stop-opacity="0.45"/><stop offset="100%" stop-color="oklch(0.82 0.20 162)" stop-opacity="0"/></linearGradient></defs>
+                  <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="oklch(0.79 0.16 166)" stop-opacity="0.45"/><stop offset="100%" stop-color="oklch(0.79 0.16 166)" stop-opacity="0"/></linearGradient></defs>
                   <path d="M0,65 L30,60 L60,62 L90,45 L120,50 L150,35 L180,38 L210,24 L240,30 L270,16 L300,20 L300,80 L0,80 Z" fill="url(#g1)"/>
-                  <path d="M0,65 L30,60 L60,62 L90,45 L120,50 L150,35 L180,38 L210,24 L240,30 L270,16 L300,20" fill="none" stroke="oklch(0.82 0.20 162)" stroke-width="1.25"/>
+                  <path d="M0,65 L30,60 L60,62 L90,45 L120,50 L150,35 L180,38 L210,24 L240,30 L270,16 L300,20" fill="none" stroke="oklch(0.79 0.16 166)" stroke-width="1.25"/>
                 </svg>
               </div>
             </div>
@@ -1641,7 +975,7 @@
               </div>
               <div class="mock-chart">
                 <svg viewBox="0 0 300 80" preserveAspectRatio="none">
-                  <g fill="oklch(0.82 0.20 162 / 0.6)">
+                  <g fill="oklch(0.79 0.16 166 / 0.6)">
                     <rect x="12" y="30" width="14" height="40"/><rect x="36" y="22" width="14" height="48"/>
                     <rect x="60" y="34" width="14" height="36"/><rect x="84" y="18" width="14" height="52"/>
                     <rect x="108" y="26" width="14" height="44"/><rect x="132" y="12" width="14" height="58"/>
@@ -1666,6 +1000,84 @@
             <div class="metric-lbl">Digital ops for Bangladesh's leading LPG service provider</div>
           </div>
         </article>
+
+      <!-- Enterprise Reports & Localization Registry -->
+      <div class="reveal" style="grid-column: 1 / -1; margin-top: 60px; border-top: 1px solid var(--border); padding-top: 60px;">
+        <h3 style="font-size: 26px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 12px; color: var(--text); font-family: 'Plus Jakarta Sans', var(--sans);">Reports &amp; Localization Registry</h3>
+        <p style="font-size: 14.5px; color: var(--text-2); line-height: 1.6; max-width: 720px; margin: 0 0 32px;">
+          Production-grade reporting systems and localized modules designed, validated, and deployed to live production environments.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <!-- Report 1: Inventory Consumption -->
+          <div style="border: 1px solid var(--border); border-radius: 8px; padding: 24px; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <span style="font-family: var(--mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase;">MODULE / INVENTORY</span>
+                <span style="font-family: var(--mono); font-size: 9.5px; padding: 3px 8px; border-radius: 999px; background: var(--accent-dim); color: var(--accent); border: 1px solid oklch(0.79 0.16 166 / 0.25);">● Active</span>
+              </div>
+              <h4 style="font-size: 18px; font-weight: 600; margin: 0 0 8px; font-family: 'Plus Jakarta Sans', var(--sans);">Inventory Consumption Report</h4>
+              <p style="font-size: 13.5px; color: var(--text-2); line-height: 1.5; margin: 0;">Designed a multi-dimensional consumption ledger mapping material costs against active production batches.</p>
+            </div>
+            <div style="border-top: 1px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Alignment:</strong> Collated inventory cost metrics from store managers &amp; cost accountants.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Validation:</strong> Automated cross-checks comparing physical counts to FIFO/AVCO valuation layers.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Deployment:</strong> Optimized PostgreSQL index structures; deployed via containerized Docker Odoo cluster.</div>
+            </div>
+          </div>
+
+          <!-- Report 2: Export Sales Details -->
+          <div style="border: 1px solid var(--border); border-radius: 8px; padding: 24px; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <span style="font-family: var(--mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase;">MODULE / SALES</span>
+                <span style="font-family: var(--mono); font-size: 9.5px; padding: 3px 8px; border-radius: 999px; background: var(--accent-dim); color: var(--accent); border: 1px solid oklch(0.79 0.16 166 / 0.25);">● Active</span>
+              </div>
+              <h4 style="font-size: 18px; font-weight: 600; margin: 0 0 8px; font-family: 'Plus Jakarta Sans', var(--sans);">Export Sales Details Report</h4>
+              <p style="font-size: 13.5px; color: var(--text-2); line-height: 1.5; margin: 0;">Created custom reporting for shipping logs, customs bills, and export sales metrics.</p>
+            </div>
+            <div style="border-top: 1px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Alignment:</strong> Unified logistics &amp; commercial compliance requirements for export workflows.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Validation:</strong> Validated customs duty documents and bank L/C data structures against Odoo invoicing records.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Deployment:</strong> Deployed via zero-downtime rolling updates to production Nginx environments.</div>
+            </div>
+          </div>
+
+          <!-- Report 3: Budget Details -->
+          <div style="border: 1px solid var(--border); border-radius: 8px; padding: 24px; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <span style="font-family: var(--mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase;">MODULE / ACCOUNTING</span>
+                <span style="font-family: var(--mono); font-size: 9.5px; padding: 3px 8px; border-radius: 999px; background: var(--accent-dim); color: var(--accent); border: 1px solid oklch(0.79 0.16 166 / 0.25);">● Active</span>
+              </div>
+              <h4 style="font-size: 18px; font-weight: 600; margin: 0 0 8px; font-family: 'Plus Jakarta Sans', var(--sans);">Budget Details Reports</h4>
+              <p style="font-size: 13.5px; color: var(--text-2); line-height: 1.5; margin: 0;">Implemented C-level budgeting controls linked to cost centers and analytical accounts.</p>
+            </div>
+            <div style="border-top: 1px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Alignment:</strong> Coordinated with executive CFO suites to establish departmental budget thresholds.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Validation:</strong> Structured automated financial ledger reconciliations comparing budget allocation vs actual spends.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Deployment:</strong> Integrated automated scheduled PDF delivery actions directly to slack/email channels.</div>
+            </div>
+          </div>
+
+          <!-- Report 4: TDS Reporting (In-Development) -->
+          <div style="border: 1px solid var(--border); border-radius: 8px; padding: 24px; background: var(--surface); display: flex; flex-direction: column; justify-content: space-between; gap: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                <span style="font-family: var(--mono); font-size: 10px; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase;">LOCALIZATION / TAX</span>
+                <span style="font-family: var(--mono); font-size: 9.5px; padding: 3px 8px; border-radius: 999px; background: rgba(220,130,40,0.1); color: oklch(0.79 0.13 85); border: 1px solid rgba(220,130,40,0.25);">● In-Dev</span>
+              </div>
+              <h4 style="font-size: 18px; font-weight: 600; margin: 0 0 8px; font-family: 'Plus Jakarta Sans', var(--sans);">TDS Reporting Localization</h4>
+              <p style="font-size: 13.5px; color: var(--text-2); line-height: 1.5; margin: 0;">Developing localized module for automating Tax Deduction at Source (TDS) calculations and statutory certificate exports.</p>
+            </div>
+            <div style="border-top: 1px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Status:</strong> Rigorous validation runs comparing automated calculations against national board of revenue taxation laws.</div>
+              <div style="font-size: 12px; color: var(--text-2);"><strong style="color:var(--text)">Objective:</strong> Achieve one-click compliance auditing export capabilities.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
         <!-- Case 3: HAJ Corporation IT -->
         <article class="proof-card reveal">
@@ -2372,114 +1784,90 @@
 
     </div>
   </section>
-      </div>
-      
-      <!-- PANEL: Services (Service cards and stack mapping) -->
-      <div id="panel-services" class="tab-panel">
-        <section id="services">
+
+  <!-- SERVICES -->
+  <section id="services">
     <div class="shell">
       <div class="section-head">
         <div class="reveal">
-          <span class="eyebrow">Services · 002</span>
-          <h2 class="section-title">Odoo consulting. <span class="serif">One</span> disciplined method.</h2>
+          <span class="eyebrow">Expertise · 002</span>
+          <h2 class="section-title">Core Expertise Matrix</h2>
         </div>
         <p class="section-desc reveal">
-          Whether you're a 20-person SME or a multi-site manufacturer, the work begins the same way: understand the business, then map the software to it.
+          Bridging the operational reality of business processes with highly customized Odoo code and optimized server infrastructure.
         </p>
       </div>
 
-      <div class="services-grid">
-        <div class="svc reveal">
+      <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px;">
+        <!-- Column 1: Functional Mastery -->
+        <div class="svc reveal" style="border: 1px solid var(--border); border-radius: 8px; padding: 32px; background: var(--surface); box-shadow: 0 4px 24px rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 20px;">
           <div class="svc-kicker">
-            <span class="eyebrow">For SMEs</span>
-            <span class="price">Fixed scope · 6–10 wks</span>
+            <span class="eyebrow" style="color: var(--accent);">Functional Systems</span>
           </div>
-          <h3>SME Starter — get off spreadsheets, cleanly.</h3>
-          <p>A focused Odoo rollout for businesses that have outgrown manual workflows. Requirements to Go-Live, with clean data migration, structured training, and post-launch support.</p>
-          <ul>
-            <li>Business mapping across 3–5 core modules</li>
-            <li>BRD / FRD / process documentation</li>
-            <li>Data migration plan &amp; opening balances</li>
-            <li>UAT orchestration &amp; sign-off management</li>
-            <li>On-site training for up to 25 end users</li>
-            <li>30-day post-launch hypercare</li>
+          <h3 style="font-size: 24px; font-weight: 600; margin: 0; font-family: 'Plus Jakarta Sans', var(--sans);">Functional Mastery</h3>
+          <p style="color: var(--text-2); font-size: 14.5px; line-height: 1.6; margin: 0;">Governing operational rules and workflow routing to mirror actual business requirements in Odoo.</p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--border); padding-top: 20px;">
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>Manufacturing (MRP):</strong> Setting up work centers, hierarchical bills of materials (BoMs), routing steps, and capacity scheduling.
+            </li>
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>Inventory &amp; Supply Chain:</strong> Designing complex warehouse routes (pick-pack-ship), drop-shipping rules, push/pull routing, and multi-currency inventory valuation (FIFO, AVCO).
+            </li>
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>PLM (Product Lifecycle):</strong> Engineering Change Orders (ECOs), bills of materials version management, and engineering workflows.
+            </li>
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>HR &amp; Operations:</strong> Configuring organizational structures, employee leaves, shift allocations, performance logs, and contract hierarchies.
+            </li>
           </ul>
-          <div class="svc-footer">
-            <span class="eyebrow">Start</span>
-            <a class="btn" href="#contact" id="sme-cta">Scope a rollout <span>↗</span></a>
-          </div>
         </div>
 
-        <div class="svc enterprise reveal">
+        <!-- Column 2: Technical & SysAdmin -->
+        <div class="svc reveal" style="border: 1px solid var(--border); border-radius: 8px; padding: 32px; background: var(--surface); box-shadow: 0 4px 24px rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 20px;">
           <div class="svc-kicker">
-            <span class="eyebrow">For Enterprise</span>
-            <span class="price">Retainer · Multi-quarter</span>
+            <span class="eyebrow" style="color: var(--accent);">Technical Stack</span>
           </div>
-          <h3>Enterprise Partner — multi-site, multi-module, multi-branch.</h3>
-          <p>An embedded Business Analyst who leads C-level workshops, orchestrates cross-functional teams, and translates the operational reality of manufacturing, export, and finance into a unified Odoo system.</p>
-          <ul>
-            <li>End-to-end requirements &amp; gap analysis across all departments</li>
-            <li>As-Is to To-Be process redesign with BPMN documentation</li>
-            <li>Cross-module implementation: Manufacturing, Supply Chain, Finance</li>
-            <li>C-level stakeholder engagement &amp; UAT governance</li>
-            <li>Change management for 50–200+ end users</li>
-            <li>Post-implementation support &amp; continuous improvement</li>
+          <h3 style="font-size: 24px; font-weight: 600; margin: 0; font-family: 'Plus Jakarta Sans', var(--sans);">Technical &amp; SysAdmin</h3>
+          <p style="color: var(--text-2); font-size: 14.5px; line-height: 1.6; margin: 0;">Writing clean backend extensions, tuning performance, and maintaining secure, automated server setups.</p>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--border); padding-top: 20px;">
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>Python Development:</strong> Construction of customized Odoo models, server-side actions, custom RPC endpoints, and third-party APIs.
+            </li>
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>PostgreSQL Performance:</strong> Executing index diagnostics, query execution analysis (explain/analyze), locking audits, and autovacuum tuning.
+            </li>
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>Linux &amp; Docker Hosting:</strong> Provisioning Debian/Ubuntu nodes, configuring secure Nginx reverse proxies, SSL keys, and containerized Docker clusters.
+            </li>
+            <li style="font-size: 14px; color: var(--text); line-height: 1.5; padding: 0 0 0 24px; position: relative;">
+              <span style="position: absolute; left: 0; top: 2px; color: var(--accent);">✔</span>
+              <strong>Workflow Optimization:</strong> Building custom ticketing queues, SLA automation rules, and customer portal layouts inside Odoo Helpdesk.
+            </li>
           </ul>
-          <div class="svc-footer">
-            <span class="eyebrow">Start</span>
-            <a class="btn btn-primary" href="#contact" id="enterprise-cta">Book discovery call <span>↗</span></a>
-          </div>
         </div>
       </div>
     </div>
   </section>
-        <section id="testimonials">
-    <div class="shell">
-      <div class="testi-eyebrow">Client testimonials · 007</div>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">Hashib mapped our entire textile production workflow in ways our own managers hadn't articulated clearly before. The Go-Live was smooth, and the reports he built are used by our directors every morning.</p>
-          <div class="testi-author">
-            <span class="testi-name">Operations Director</span>
-            <span class="testi-role">Premier 1888 Mills Ltd. · Textile Manufacturing</span>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">What stood out was how he explained complex ERP concepts to our non-technical team. The BRD he produced was the clearest requirements document we've ever seen — developers and management were both happy with it.</p>
-          <div class="testi-author">
-            <span class="testi-name">Head of Operations</span>
-            <span class="testi-role">SMET Services · CNG &amp; LPG Energy</span>
-          </div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">The custom Tender Module he specified and led the implementation of transformed how we track project lifecycles. We went from manual follow-ups to a fully traceable pipeline — in under three months.</p>
-          <div class="testi-author">
-            <span class="testi-name">Managing Director</span>
-            <span class="testi-role">HAJ Corporation IT · System Integration</span>
-          </div>
-        </div>
-      </div>
-      <div class="testi-cta">
-        <a class="testi-link" href="https://www.linkedin.com/in/hashib-anjum-mahhe-9abb53246/" target="_blank" rel="noopener" id="testi-linkedin">View LinkedIn recommendations ↗</a>
-      </div>
-    </div>
-  </section>
-      </div>
-      
-      <!-- PANEL: Estimator (Cost estimator tool) -->
-      <div id="panel-estimator" class="tab-panel">
-        <section id="tools">
+
+
+
+  <!-- FREE TOOLS: COST ESTIMATOR -->
+  <section id="tools">
     <div class="shell">
       <div class="section-head">
         <div class="reveal">
           <span class="eyebrow">Free Tools · 004</span>
-          <h2 class="section-title">Tools that <span class="serif">help</span> you decide.</h2>
+          <h2 class="section-title">Tech Lab &amp; Tools</h2>
         </div>
         <p class="section-desc reveal">
-          Free interactive utilities built from real Bangladesh ERP projects. No sign-up, no email gate — get a number you can take to the boardroom.
+          Technical widgets, calculators, and system blueprints designed for enterprise validation.
         </p>
       </div>
       <div class="tools-wrap reveal">
@@ -2555,11 +1943,10 @@
       </div>
     </div>
   </section>
-      </div>
-      
-      <!-- PANEL: About (Bio timeline and faq) -->
-      <div id="panel-about" class="tab-panel">
-        <section id="about">
+
+
+  <!-- ABOUT -->
+  <section id="about">
     <div class="shell">
       <div class="about">
         <div class="about-l reveal">
@@ -2614,7 +2001,45 @@
       </div>
     </div>
   </section>
-        <section id="faq">
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="shell">
+      <div class="testi-eyebrow">Client testimonials · 007</div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">Hashib mapped our entire textile production workflow in ways our own managers hadn't articulated clearly before. The Go-Live was smooth, and the reports he built are used by our directors every morning.</p>
+          <div class="testi-author">
+            <span class="testi-name">Operations Director</span>
+            <span class="testi-role">Premier 1888 Mills Ltd. · Textile Manufacturing</span>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">What stood out was how he explained complex ERP concepts to our non-technical team. The BRD he produced was the clearest requirements document we've ever seen — developers and management were both happy with it.</p>
+          <div class="testi-author">
+            <span class="testi-name">Head of Operations</span>
+            <span class="testi-role">SMET Services · CNG &amp; LPG Energy</span>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">The custom Tender Module he specified and led the implementation of transformed how we track project lifecycles. We went from manual follow-ups to a fully traceable pipeline — in under three months.</p>
+          <div class="testi-author">
+            <span class="testi-name">Managing Director</span>
+            <span class="testi-role">HAJ Corporation IT · System Integration</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-cta">
+        <a class="testi-link" href="https://www.linkedin.com/in/hashib-anjum-mahhe-9abb53246/" target="_blank" rel="noopener" id="testi-linkedin">View LinkedIn recommendations ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
     <div class="shell">
       <div class="section-head">
         <div class="reveal">
@@ -2646,28 +2071,11 @@
       </div>
     </div>
   </section>
-        <div class="signature">
-    <div class="sig-shell">
-      <div class="sig-row sig-meta">
-        <span>Dhaka, Bangladesh</span>
-        <span>Metamorphosis Ltd. · Odoo Country Partner</span>
-        <span>EST. 2022</span>
-      </div>
-      <div class="sig-name" aria-hidden="true">
-        Hashib<span class="sig-dot">.</span>
-      </div>
-      <div class="sig-row sig-foot">
-        <span>Business Analyst &amp; Odoo Functional Consultant</span>
-        <div class="sig-line"></div>
-        <span>© 2026</span>
-      </div>
-    </div>
-  </div>
-      </div>
-      
-      <!-- PANEL: Contact (Contact form) -->
-      <div id="panel-contact" class="tab-panel">
-        <section id="contact">
+
+
+
+  <!-- CONTACT -->
+  <section id="contact">
     <div class="shell">
       <div class="contact-wrap reveal">
         <span class="eyebrow" style="grid-column:1/-1;">Let's talk · 009</span>
@@ -2774,7 +2182,27 @@
       </div>
     </div>
   </section>
-        <footer>
+
+  <!-- SIGNATURE FOOTER -->
+  <div class="signature">
+    <div class="sig-shell">
+      <div class="sig-row sig-meta">
+        <span>Dhaka, Bangladesh</span>
+        <span>Metamorphosis Ltd. · Odoo Country Partner</span>
+        <span>EST. 2022</span>
+      </div>
+      <div class="sig-name" aria-hidden="true">
+        Hashib<span class="sig-dot">.</span>
+      </div>
+      <div class="sig-row sig-foot">
+        <span>Business Analyst &amp; Odoo Functional Consultant</span>
+        <div class="sig-line"></div>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
     <div class="shell">
       <div class="foot">
         <span>© 2026 Hashib Anjum Mahhe</span>
@@ -2785,10 +2213,6 @@
       </div>
     </div>
   </footer>
-      </div>
-    </main>
-  </div>
-
 
   <!-- JAVASCRIPT -->
   <script>
@@ -2951,46 +2375,6 @@
         });
       });
     });
-  
-    // ── Dashboard Tab Switching ──────────────────────────────────────────────
-    document.querySelectorAll('.nav-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        
-        tab.classList.add('active');
-        const target = tab.getAttribute('data-target');
-        const activePanel = document.getElementById(target);
-        if (activePanel) {
-          activePanel.classList.add('active');
-        }
-        
-        // Scroll dashboard main panel to top on tab switch
-        const mainPanel = document.querySelector('.main-panel');
-        if (mainPanel) {
-          mainPanel.scrollTop = 0;
-        }
-      });
-    });
-
-    // Support theme toggle from sidebar button
-    const sidebarThemeToggle = document.getElementById('theme-toggle-sidebar');
-    if (sidebarThemeToggle) {
-      sidebarThemeToggle.addEventListener('click', () => {
-        // Trigger original theme-toggle logic (clicks the hidden toggle button)
-        const origToggle = document.getElementById('theme-toggle');
-        if (origToggle) {
-          origToggle.click();
-          
-          // Update theme-text label in sidebar
-          const themeText = sidebarThemeToggle.querySelector('.theme-text');
-          if (themeText) {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            themeText.textContent = currentTheme === 'light' ? 'Light Mode' : 'Dark Mode';
-          }
-        }
-      });
-    }
-</script>
+  </script>
 </body>
 </html>
