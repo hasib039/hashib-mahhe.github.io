@@ -867,6 +867,24 @@
         grid-template-columns: repeat(4, 1fr);
       }
     }
+    .ledger-card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ledger-client-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      padding: 4px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    html[data-theme="light"] .ledger-client-logo {
+      background: rgba(0,0,0,0.03);
+      border-color: rgba(0,0,0,0.08);
+    }
     .ledger-card {
       background: rgba(255,255,255,0.01);
       border: 1px solid rgba(255,255,255,0.05);
@@ -1489,6 +1507,9 @@
       <div class="ledger-grid">
         <!-- Card 1: Adarsha -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/18243823/avatar_128/Adarsha" alt="Adarsha logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Adarsha</h3>
           <p class="ledger-card-desc">Adarsha Publication is a prominent name in Bangladesh's publishing industry, known for its dedication to quality and intellectual growth. Odoo streamlined their inventory, POS, and accounting workflows.</p>
           <div class="ledger-card-footer">
@@ -1501,6 +1522,9 @@
 
         <!-- Card 2: Ajit Saha Bangladesh Limited -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/9214864/avatar_128/Ajit%20Saha%20Bangladesh%20Limited" alt="Ajit Saha Bangladesh Limited logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Ajit Saha Bangladesh Limited</h3>
           <p class="ledger-card-desc">Ajit Saha Bangladesh Limited is dedicated to empowering farmers through high-quality seeds and innovative pest control solutions. Odoo centralized their purchase, inventory, and accounting operations.</p>
           <div class="ledger-card-footer">
@@ -1513,6 +1537,9 @@
 
         <!-- Card 3: Alchem Enterprise -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/15601563/avatar_128/Alchem%20Enterprise" alt="Alchem Enterprise logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Alchem Enterprise</h3>
           <p class="ledger-card-desc">Alchem Enterprise specializes in supplying high-value APIs and excipients to Bangladesh's pharmaceutical and nutraceutical industries. Odoo unified procurement, inventory, CRM and finance workflows.</p>
           <div class="ledger-card-footer">
@@ -1525,6 +1552,9 @@
 
         <!-- Card 4: Anan Enterprise -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/21377035/avatar_128/Anan%20Enterprise" alt="Anan Enterprise logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Anan Enterprise</h3>
           <p class="ledger-card-desc">Anan Enterprise is a rapidly growing super shop in Bangladesh. Odoo digitalized their retail operations through POS, inventory management, and integrated accounting and finance.</p>
           <div class="ledger-card-footer">
@@ -1550,6 +1580,9 @@
 
         <!-- Card 6: Baatighar -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/3703877/avatar_128/Baatighar" alt="Baatighar logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Baatighar</h3>
           <p class="ledger-card-desc">Baatighar is a premier book store in Bangladesh with three large-scale physical stores and over 90,000 unique book titles. Odoo enabled multi-company eCommerce, POS, and inventory management.</p>
           <div class="ledger-card-footer">
@@ -1562,6 +1595,9 @@
 
         <!-- Card 7: Bel Group -->
         <div class="ledger-card" data-category="services">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/3679008/avatar_128/Bel%20Group" alt="Bel Group logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Bel Group</h3>
           <p class="ledger-card-desc">BelTech is an end-to-end tech solution provider under Build Entrepreneurs Ltd., with a focus on Industry 4.0 innovation and technology. Odoo supports their business workflows and service operations.</p>
           <div class="ledger-card-footer">
@@ -1574,6 +1610,9 @@
 
         <!-- Card 8: Biriyani Mahal -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/31305257/avatar_128/Biriyani%20Mahal" alt="Biriyani Mahal logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Biriyani Mahal</h3>
           <p class="ledger-card-desc">Biriyani Mahal is a premium biriyani and authentic food brand built around rich flavor and traditional cooking. Odoo powers their POS, Kitchen Order Ticket system, and accounting.</p>
           <div class="ledger-card-footer">
@@ -1587,6 +1626,9 @@
 
         <!-- Card 9: BSEP Bangladesh -->
         <div class="ledger-card" data-category="ngo">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/16219619/avatar_128/BSEP%20Bangladesh" alt="BSEP Bangladesh logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">BSEP Bangladesh</h3>
           <p class="ledger-card-desc">BSEP is a trusted Manufacturing &amp; Trading company for Fire Safety &amp; Electro-Mechanical products. Odoo streamlined their sales, inventory, accounting, and email marketing operations.</p>
           <div class="ledger-card-footer">
@@ -1599,6 +1641,9 @@
 
         <!-- Card 10: Cross World Group -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/2899959/avatar_128/Cross%20World%20Group" alt="Cross World Group logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Cross World Group</h3>
           <p class="ledger-card-desc">Cross World Group provides state-of-the-art diesel generators, substations, and power solutions with nationwide service network and comprehensive spare parts support.</p>
           <div class="ledger-card-footer">
@@ -1611,6 +1656,9 @@
 
         <!-- Card 11: Curepoint Pharmacy & Departmental Store -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/17023144/avatar_128/Curepoint%20Pharmacy%20%26%20Departmental%20Store" alt="Curepoint Pharmacy & Departmental Store logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Curepoint Pharmacy &amp; Departmental Store</h3>
           <p class="ledger-card-desc">Curepoint Pharmacy &amp; Departmental Store is a trusted community-based retailer providing pharmaceutical products alongside essential departmental items. Odoo manages their POS, accounting, purchase, and inventory.</p>
           <div class="ledger-card-footer">
@@ -1637,6 +1685,9 @@
 
         <!-- Card 13: Donor Plastic Industries -->
         <div class="ledger-card" data-category="services">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/13195783/avatar_128/Donor%20Plastic%20Industries" alt="Donor Plastic Industries logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Donor Plastic Industries</h3>
           <p class="ledger-card-desc">Donor Plastic Industries has served Bangladesh's pharmaceutical industry for 3 decades, manufacturing measuring cups, spoons, pill containers, and bottles. Odoo unified their production, sales, and inventory.</p>
           <div class="ledger-card-footer">
@@ -1650,6 +1701,9 @@
 
         <!-- Card 14: Easy Dhaka Solutions -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/6824391/avatar_128/Easy%20Dhaka%20Solutions" alt="Easy Dhaka Solutions logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Easy Dhaka Solutions</h3>
           <p class="ledger-card-desc">EASYDHAKABD.COM is one of the fastest growing E-commerce sites in Bangladesh offering directly imported products from UK and China. Odoo supports their digital retail and eCommerce operations.</p>
           <div class="ledger-card-footer">
@@ -1711,6 +1765,9 @@
 
         <!-- Card 19: Green Tiger Electric Vehicle Limited -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/4007126/avatar_128/Green%20Tiger%20Electric%20Vehicle%20Limited" alt="Green Tiger Electric Vehicle Limited logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Green Tiger Electric Vehicle Limited</h3>
           <p class="ledger-card-desc">Green Tiger was launched in 2009 with a vision of establishing a sustainable market in Eco-Friendly Electric Vehicles. Odoo supports their product management and business workflows.</p>
           <div class="ledger-card-footer">
@@ -1723,6 +1780,9 @@
 
         <!-- Card 20: Gronthik Prokashon -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/17220944/avatar_128/Gronthik%20Prokashon" alt="Gronthik Prokashon logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Gronthik Prokashon</h3>
           <p class="ledger-card-desc">Gronthik Prokashon, established in 2017, has quickly become a distinguished name in Bangladesh's publishing landscape. Odoo manages their eCommerce, inventory, invoicing, accounting, and POS.</p>
           <div class="ledger-card-footer">
@@ -1736,6 +1796,9 @@
 
         <!-- Card 21: HAJ Corporation -->
         <div class="ledger-card" data-category="services">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/12794545/avatar_128/HAJ%20Corporation" alt="HAJ Corporation logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">HAJ Corporation</h3>
           <p class="ledger-card-desc">HAJ Corporation is a dynamic system integrator specializing in AI-based surveillance, business automation, and technology-driven solutions. Odoo manages purchase, sales, CRM, project management, and accounting.</p>
           <div class="ledger-card-footer">
@@ -1749,6 +1812,9 @@
 
         <!-- Card 22: IDIYA Limited -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/5350404/avatar_128/IDIYA%20Limited" alt="IDIYA Limited logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">IDIYA Limited</h3>
           <p class="ledger-card-desc">IDIYA is one of New Zealand's largest parallel importers and wholesalers of IKEA products, delivering modern Scandinavian design accessibility. Odoo manages their eCommerce, inventory, sales, and invoicing.</p>
           <div class="ledger-card-footer">
@@ -1773,6 +1839,9 @@
 
         <!-- Card 24: Jamuna Spacetech Joint Venture Ltd. -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/20765985/avatar_128/Jamuna%20Spacetech%20Joint%20Venture%20Ltd." alt="Jamuna Spacetech Joint Venture Ltd. logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Jamuna Spacetech Joint Venture Ltd.</h3>
           <p class="ledger-card-desc">Jamuna Spacetech Joint Venture Ltd. (JSJVL) is a leader in Bangladesh's LPG sector. Odoo ERP centralized their operations, supply chain, inventory, and finance in one unified platform.</p>
           <div class="ledger-card-footer">
@@ -1785,6 +1854,9 @@
 
         <!-- Card 25: Kindred Limited -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/17815861/avatar_128/Kindred%20Limited" alt="Kindred Limited logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Kindred Limited</h3>
           <p class="ledger-card-desc">Porshi Super Store by Kindred Limited is a dynamic retail chain offering a one-stop shopping destination for quality products. Odoo manages their supply chain, inventory, POS, and accounting.</p>
           <div class="ledger-card-footer">
@@ -1797,6 +1869,9 @@
 
         <!-- Card 26: M&U Cycles Ltd. -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/11976279/avatar_128/M%26U%20Cycles%20Ltd." alt="M&U Cycles Ltd. logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">M&amp;U Cycles Ltd.</h3>
           <p class="ledger-card-desc">M&amp;U Cycles Limited is one of the largest bicycle manufacturers and exporters in Bangladesh, built with modern facilities for international markets. Odoo manages their accounting, purchase, manufacturing, and sales.</p>
           <div class="ledger-card-footer">
@@ -1809,6 +1884,9 @@
 
         <!-- Card 27: Master General Company Limited -->
         <div class="ledger-card" data-category="services">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/12134342/avatar_128/Master%20General%20Company%20Limited" alt="Master General Company Limited logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Master General Company Limited</h3>
           <p class="ledger-card-desc">Master General Company Limited is a trading business covering seafood and global import/export. Odoo manages their accounting, sales, purchase, inventory, CRM, and email marketing.</p>
           <div class="ledger-card-footer">
@@ -1834,6 +1912,9 @@
 
         <!-- Card 29: Organik Chicken -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/6429232/avatar_128/Organik%20Chicken" alt="Organik Chicken logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Organik Chicken</h3>
           <p class="ledger-card-desc">Organik Chicken is an agricultural startup focused on antibiotic-free and organic meat production to combat Antibiotic Resistance. Odoo manages their website, eCommerce, delivery, inventory, and accounting.</p>
           <div class="ledger-card-footer">
@@ -1846,6 +1927,9 @@
 
         <!-- Card 30: Premier 1888 Ltd. -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/8777531/avatar_128/Premier%201888%20Ltd." alt="Premier 1888 Ltd. logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Premier 1888 Ltd.</h3>
           <p class="ledger-card-desc">Established in 1989, Premier 1888 Ltd. is one of the largest manufacturers and exporters of textile terry and non-terry products in Bangladesh, with 5 production facilities.</p>
           <div class="ledger-card-footer">
@@ -1883,6 +1967,9 @@
 
         <!-- Card 33: SMET SERVICES -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/1127900/avatar_128/SMET%20SERVICES" alt="SMET SERVICES logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">SMET SERVICES</h3>
           <p class="ledger-card-desc">SMET SERVICES and Saad Motors (formerly SAAD CNG) is the leading CNG &amp; LPG service provider in Bangladesh. Odoo manages their supply chain, manufacturing, and accounting &amp; finance.</p>
           <div class="ledger-card-footer">
@@ -1896,6 +1983,9 @@
 
         <!-- Card 34: Studio Varmine -->
         <div class="ledger-card" data-category="manufacturing">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/10689010/avatar_128/Studio%20Varmine" alt="Studio Varmine logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Studio Varmine</h3>
           <p class="ledger-card-desc">Studio VARMINE is an architecture consulting firm committed to providing the highest quality building and interior design and construction services to its valued clients.</p>
           <div class="ledger-card-footer">
@@ -1908,6 +1998,9 @@
 
         <!-- Card 35: Tetra Private Limited -->
         <div class="ledger-card" data-category="services">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/20253558/avatar_128/Tetra%20Private%20Limited" alt="Tetra Private Limited logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">Tetra Private Limited</h3>
           <p class="ledger-card-desc">Tetra Private Limited is a social enterprise providing "Water For Life" by deploying affordable water purification technologies in climate-affected coastal communities. Odoo manages field service, inventory, and accounting.</p>
           <div class="ledger-card-footer">
@@ -1921,6 +2014,9 @@
 
         <!-- Card 36: The University Press Limited (UPL) -->
         <div class="ledger-card" data-category="retail">
+          <div class="ledger-card-header">
+            <img src="https://odoocdn.com/web/image/res.partner/12019380/avatar_128/The%20University%20Press%20Limited%20%28UPL%29" alt="The University Press Limited (UPL) logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'" />
+          </div>
           <h3 class="ledger-card-title">The University Press Limited (UPL)</h3>
           <p class="ledger-card-desc">The University Press Limited (UPL) is a leading publisher of Bangladesh, publishing educational, academic and scholarly books in English and Bangla since 1974. Odoo manages eCommerce, sales, POS, purchase, and inventory.</p>
           <div class="ledger-card-footer">
