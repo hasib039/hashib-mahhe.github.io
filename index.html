@@ -1105,6 +1105,33 @@
       border-color: rgba(0, 0, 0, 0.08);
       background: rgba(0, 0, 0, 0.02);
     }
+    html[data-theme="light"] .status {
+      background: var(--surface);
+      border-color: var(--border);
+      color: var(--text-2);
+    }
+    html[data-theme="light"] .pulse {
+      background: oklch(0.60 0.14 166);
+    }
+    html[data-theme="light"] .ledger-tech {
+      color: var(--text-2);
+      opacity: 0.85;
+    }
+    html[data-theme="light"] .ledger-badge.implementor {
+      color: #0284c7;
+      border-color: rgba(2, 132, 199, 0.25);
+      background: rgba(2, 132, 199, 0.05);
+    }
+    html[data-theme="light"] .ledger-badge.analyst {
+      color: #7c3aed;
+      border-color: rgba(124, 58, 237, 0.25);
+      background: rgba(124, 58, 237, 0.05);
+    }
+    html[data-theme="light"] .ledger-badge.support {
+      color: #4f46e5;
+      border-color: rgba(79, 70, 229, 0.25);
+      background: rgba(79, 70, 229, 0.05);
+    }
 
     /* Responsive overrides for hero avatar on mobile */
     @media(max-width:860px) {
@@ -1515,10 +1542,9 @@
 
           <div class="ledger-filters">
             <button class="ledger-filter-btn active" data-filter="all">All (37)</button>
-            <button class="ledger-filter-btn" data-filter="manufacturing">Manufacturing (11)</button>
+            <button class="ledger-filter-btn" data-filter="manufacturing">Manufacturing (12)</button>
             <button class="ledger-filter-btn" data-filter="retail">Wholesale &amp; Retail (17)</button>
             <button class="ledger-filter-btn" data-filter="services">IT &amp; Services (8)</button>
-            <button class="ledger-filter-btn" data-filter="ngo">NGO (1)</button>
           </div>
         </div>
       </div>
@@ -1655,7 +1681,7 @@
         </div>
 
         <!-- Card 9: BSEP Bangladesh -->
-        <div class="ledger-card" data-category="ngo">
+        <div class="ledger-card" data-category="manufacturing">
           <div class="ledger-card-header">
             <img src="https://odoocdn.com/web/image/res.partner/16219619/avatar_128/BSEP%20Bangladesh" alt="BSEP Bangladesh logo" class="ledger-client-logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
                       <div class="ledger-client-placeholder" style="display: none;">B</div>
